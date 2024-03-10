@@ -40,13 +40,13 @@ contract DigitalTicketToken is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
 
     function mintPromoterNFT(address promoter) public onlyRole(MINTER_ROLE) {
         _safeMint(promoter, _nextTokenId);
-        _setTokenURI(_nextTokenId, PROMOTER_ART_URI);
+        _setTokenURI(_nextTokenId, string(abi.encodePacked(PROMOTER_ART_URI, "/", _nextTokenId, ".json")));
         _nextTokenId++;
     }
 
     function mintAdministratorNFT(address administrator) public onlyRole(MINTER_ROLE) {
         _safeMint(administrator, _nextTokenId);
-        _setTokenURI(_nextTokenId, ADMINISTRATOR_ART_URI);
+        _setTokenURI(_nextTokenId, string(abi.encodePacked(ADMINISTRATOR_ART_URI, "/", _nextTokenId, ".json")));
         _nextTokenId++;
     }
 
