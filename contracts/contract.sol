@@ -10,6 +10,7 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
 contract DigitalTicketToken is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Pausable, AccessControl, ERC721Burnable {
+    bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint256 private _nextTokenId;
@@ -25,11 +26,16 @@ contract DigitalTicketToken is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
         _grantRole(MINTER_ROLE, minter);
     }
 
-    function setBaseURI(string calldata newBaseURI) public onlyOwner {
+    modifier onlyAdmin() {
+        require(hasRole(ADMIN_ROLE, msg.sender), "Caller is not an admin");
+        _;
+    }
+
+    function setBaseURI(string calldata newBaseURI) public onlyAdmin {
         _baseTokenURI = newBaseURI;
     }
 
-    function _baseURI() internal pure override returns (string memory) {
+    function _baseURI() internal view override returns (string memory) {
         return _baseTokenURI;
     }
 
