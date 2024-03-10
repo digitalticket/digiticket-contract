@@ -807,19 +807,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "newBaseURI",
-						"type": "string"
-					}
-				],
-				"name": "setBaseURI",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -1354,11 +1341,11 @@
 			]
 		},
 		"contracts/contract.sol": {
-			"keccak256": "0x8c0a9337fa4b8c4a60eeca670c38e372389a71daeffaddef365fb4a9e903ee9a",
+			"keccak256": "0x88a258a63d2efe137a265f482510d08aa68d8a08e740a7a0cbc220599329703b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e72132d034642a958ab56d425bb06f0db5a89127f1b865e8530835a2b0a52238",
-				"dweb:/ipfs/QmQfnNSqdHnNDQsUmyZL5N2DmwPS6oSUufrxMBv7U5KDcy"
+				"bzz-raw://9246b742a4447235f682cfa565eaf2031616e0f208e780cec0d615613f6a5b34",
+				"dweb:/ipfs/QmXyrb7eCa3NFnVHQN9BjBsjr3Ph1ShRGfhkvd1CqrnTV6"
 			]
 		}
 	},

@@ -14,9 +14,8 @@ contract DigitalTicketToken is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint256 private _nextTokenId;
-    string private _baseTokenURI;
-    string public constant PROMOTER_ART_URI = "https://amaranth-peculiar-gayal-480.mypinata.cloud/ipfs/QmckHM8D3rW9A1vzyqadYh1Q2rKAiU7U7aSz3fbh3LnL6F/?pinataGatewayToken=aquvMzXletOUEQZ5Kf2l0tH13EthHLEXEsLedAEwjWkWI91m8XoPkcqIy2kF8DEG";
-    string public constant ADMINISTRATOR_ART_URI = "https://amaranth-peculiar-gayal-480.mypinata.cloud/ipfs/QmeEktsAMFRKSnmLEDEdB1KK4KK3euPQjtX7icqP7oNjtC/?pinataGatewayToken=aquvMzXletOUEQZ5Kf2l0tH13EthHLEXEsLedAEwjWkWI91m8XoPkcqIy2kF8DEG";
+    string public constant PROMOTER_ART_URI = "https://gateway.pinata.cloud/ipfs/Qmeos9W6ZnVGZpVFkWXzAqakZut5hc7rwkKhNpKva2NeVv";
+    string public constant ADMINISTRATOR_ART_URI = "https://gateway.pinata.cloud/ipfs/QmS94WUfy9NGCswNVK7J7iWyULwwiNYKHrBePG4871VypX";
 
     constructor(address defaultAdmin, address pauser, address minter)
         ERC721("DigitalTicketToken", "DTK")
@@ -31,14 +30,6 @@ contract DigitalTicketToken is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
         _;
     }
 
-    function setBaseURI(string calldata newBaseURI) public onlyAdmin {
-        _baseTokenURI = newBaseURI;
-    }
-
-    function _baseURI() internal view override returns (string memory) {
-        return _baseTokenURI;
-    }
-
     function pause() public onlyRole(PAUSER_ROLE) {
         _pause();
     }
@@ -49,13 +40,13 @@ contract DigitalTicketToken is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
 
     function mintPromoterNFT(address promoter) public onlyRole(MINTER_ROLE) {
         _safeMint(promoter, _nextTokenId);
-        _setTokenURI(_nextTokenId, string(abi.encodePacked(_baseURI(), PROMOTER_ART_URI)));
+        _setTokenURI(_nextTokenId, PROMOTER_ART_URI);
         _nextTokenId++;
     }
 
     function mintAdministratorNFT(address administrator) public onlyRole(MINTER_ROLE) {
         _safeMint(administrator, _nextTokenId);
-        _setTokenURI(_nextTokenId, string(abi.encodePacked(_baseURI(), ADMINISTRATOR_ART_URI)));
+        _setTokenURI(_nextTokenId, ADMINISTRATOR_ART_URI);
         _nextTokenId++;
     }
 
