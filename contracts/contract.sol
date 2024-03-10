@@ -14,8 +14,8 @@ contract DigitalTicketToken is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint256 private _nextTokenId;
-    string public constant PROMOTER_ART_URI = "https://gateway.pinata.cloud/ipfs/Qmeos9W6ZnVGZpVFkWXzAqakZut5hc7rwkKhNpKva2NeVv";
-    string public constant ADMINISTRATOR_ART_URI = "https://gateway.pinata.cloud/ipfs/QmS94WUfy9NGCswNVK7J7iWyULwwiNYKHrBePG4871VypX";
+    string public constant PROMOTER_ART_URI = "https://nftstorage.link/ipfs/bafybeibrmftsn6zipok7ehesddi3nt22ejpl2x5axruay5eia3nfblps3i";
+    string public constant ADMINISTRATOR_ART_URI = "https://nftstorage.link/ipfs/bafybeifvrkihu3oz3hiybmutonqf77hgg77h6mstox76ulvwbh2yca3wo4";
 
     constructor(address defaultAdmin, address pauser, address minter)
         ERC721("DigitalTicketToken", "DTK")
