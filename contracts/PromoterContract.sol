@@ -17,7 +17,7 @@ contract DigitalTicketPromoter is ERC721, ERC721Enumerable, ERC721URIStorage, ER
     {}
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://nftstorage.link/ipfs/bafybeigcusxptfqznu4guhcxl6pngmkfnqr46dq2btnwr3oujd5qskzcue";
+        return "https://nftstorage.link/ipfs/bafybeigcusxptfqznu4guhcxl6pngmkfnqr46dq2btnwr3oujd5qskzcue/";
     }
 
     function safeMint(address to, string memory uri) public onlyOwner {

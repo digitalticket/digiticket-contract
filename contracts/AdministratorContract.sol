@@ -17,7 +17,7 @@ contract DigitalTicketAdmin is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
     {}
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://nftstorage.link/ipfs/bafybeidskjdv3sxqvftdbxu53tomb66ffb3x2rdspclsjfsb7w2zpsrrym";
+        return "https://nftstorage.link/ipfs/bafybeidskjdv3sxqvftdbxu53tomb66ffb3x2rdspclsjfsb7w2zpsrrym/";
     }
 
     function safeMint(address to, string memory uri) public onlyOwner {

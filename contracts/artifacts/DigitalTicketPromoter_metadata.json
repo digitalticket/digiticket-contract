@@ -838,7 +838,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/AdministratorContract.sol": "DigitalTicketAdmin"
+			"contracts/PromoterContract.sol": "DigitalTicketPromoter"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -1004,12 +1004,12 @@
 				"dweb:/ipfs/QmVBEei6aTnvYNZp2CHYVNKyZS4q1KkjANfY39WVXZXVoT"
 			]
 		},
-		"contracts/AdministratorContract.sol": {
-			"keccak256": "0xf3c7b05fe899396aa9fd99a6668c228da17e923eacee2ca33be4d6f6bd1b744d",
+		"contracts/PromoterContract.sol": {
+			"keccak256": "0xe61bfa990f2c57561fba68745f2dd3b26a2454efdef016a7208d8f82aa7c81f9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://473e932ab85e5513a45bf590825040376ffeff1e4cb0b58f20419d6409e6dc83",
-				"dweb:/ipfs/QmYunFDBWES43wZ2rzbT4yAqe7ZSWBfgFR9ud63byT67ne"
+				"bzz-raw://43532921c67891cf7bf3e25f8dc45ffa4c386c6538131a3e3ea6c6be090d7932",
+				"dweb:/ipfs/QmT6oVs9rWpjwkBYPpbqZKhzcMqQtBKkytFVGuBPgvfX7n"
 			]
 		}
 	},
